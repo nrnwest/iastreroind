@@ -11,9 +11,13 @@ RUN if [ ${INSTALL_XDEBUG} = true ]; \
     fi;
 
 COPY ./_docker/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY ./_docker/php-fpm/default.ini /usr/local/etc/php/conf.d/default.ini
 
 # Postgres && Mysql
 RUN apk add --no-cache libpq-dev && docker-php-ext-install pdo_mysql
+
+# opCache
+RUN docker-php-ext-install opcache
 
 # Configure non-root user.
 ARG PUID=1000
