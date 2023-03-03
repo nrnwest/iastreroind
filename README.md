@@ -11,7 +11,7 @@ Docker, make must be installed
 ## Deployment
 
 ```bash
-git clone https://github.com/nrnwest/iasteroid.git
+git clone https://github.com/nrnwest/iastreroind
 ```
 
 ```bash
